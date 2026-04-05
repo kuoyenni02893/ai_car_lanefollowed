@@ -107,51 +107,50 @@
             <p>所有前端 UI、PID 控制邏輯、馬達通訊保護與影像處理原始碼，已完整上傳至 GitHub 以供檢閱：</p>
             <a href="https://github.com/kuoyenni02893/ai_car_lanefollowed" class="link-btn" target="_blank">💻 檢視 GitHub Repository 完整程式碼</a>
         </div>
-        <div class="box span-2" style="animation-delay: 1.1s;">
+         <div class="box span-2" style="animation-delay: 1.1s;">
             <h2>🎮 遠端中控台展示 (Web Control Panel)</h2>
             <div style="display: flex; flex-wrap: wrap; gap: 20px; align-items: center;">
                 <div style="flex: 1; min-width: 300px;">
                     <p>我們基於 Flask 開發了即時監控與遙控儀表板，將感知、判斷與控制整合於單一介面，具備以下核心功能：</p>
                     <ul>
-                        <li><strong>即時影像與狀態 (Live View)：</strong> 串流顯示車道偵測疊加圖 (L/R 質心點、偏差箭頭)、Error 偏差值與 YOLOv8 辨識結果 [cite: 28, 41]。</li>
-                        <li><strong>參數即時調教：</strong> 可在網頁上動態拉動滑桿調整 PID 參數 (Kp/Ki/Kd) 與基礎車速，無需重啟系統即可觀察修正效果 [cite: 28, 41]。</li>
-                        <li><strong>雙模式切換：</strong> 具備一鍵切換「手動遙控」與「自動循線」模式的安全機制 [cite: 28, 41]。</li>
+                        <li><strong>即時影像與狀態：</strong> 串流顯示車道偵測疊加圖 (L/R 質心點、偏差箭頭)、Error 偏差值與 YOLOv8 辨識結果。</li>
+                        <li><strong>參數即時調教：</strong> 可在網頁上動態拉動滑桿調整 PID 參數 (Kp/Ki/Kd) 與基礎車速，無需重啟系統。</li>
+                        <li><strong>雙模式切換：</strong> 具備一鍵切換「手動遙控」與「自動循線」模式的安全機制。</li>
                     </ul>
                 </div>
-                <div style="flex: 1; min-width: 300px; background: rgba(0,0,0,0.05); border: 2px dashed #d35400; border-radius: 20px; padding: 40px 20px; text-align: center;">
-                    <p style="color: #d35400; font-weight: bold; margin: 0;">[ 控制台畫面展示區 ]</p>
-                    <p style="font-size: 0.8rem; color: #888; margin-top: 10px;">之後可在此插入 Flask Web UI 的截圖</p>
+                <div style="flex: 1; min-width: 300px; text-align: center;">
+                    <img src="web_ui.png" alt="Flask 中控台畫面" style="width: 100%; border-radius: 15px; box-shadow: 0 8px 20px rgba(0,0,0,0.15); border: 1px solid #ddd;">
+                    <p style="font-size: 0.85rem; color: #666; margin-top: 10px;">▲ 整合影像辨識與 PID 參數調整的 Web UI 介面</p>
                 </div>
             </div>
         </div>
-
         <div class="box span-2" style="animation-delay: 1.3s;">
             <h2>🤖 AI 協作開發：與 Gemini 的 Troubleshooting</h2>
             <p>在開發過程中，面對硬體底層報錯與演算法瓶頸，我們積極運用 Gemini 作為強大的開發助教，解決了以下關鍵技術難題：</p>
             
             <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px;">
-                <div style="background: rgba(255,255,255,0.8); padding: 20px; border-radius: 15px; border-top: 5px solid #4285F4; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
-                    <h3 style="margin-top:0; color:#1a73e8; font-size: 1.1rem;">🐞 解決 I2C 通訊當機</h3>
-                    <p style="font-size: 0.9rem; margin-bottom: 0;">
-                        <strong>提問情境：</strong><br>RPi 5 頻繁出現 CLI 錯誤訊息，且馬達動一下就停 [cite: 81-83]。<br><br>
-                        <strong>Gemini 協助：</strong><br>精準分析出 Flask 多執行緒搶佔 I2C 資源的問題，引導我們在馬達控制中加入 <code>threading.Lock()</code> 進行保護，成功穩定系統 [cite: 77-78]。
-                    </p>
+                <div style="background: rgba(255,255,255,0.8); padding: 20px; border-radius: 15px; border-top: 5px solid #4285F4; box-shadow: 0 4px 10px rgba(0,0,0,0.05); display: flex; flex-direction: column; justify-content: space-between;">
+                    <div>
+                        <h3 style="margin-top:0; color:#1a73e8; font-size: 1.1rem;">🐞 解決 I2C 通訊當機</h3>
+                        <p style="font-size: 0.9rem;"><strong>Gemini 協助：</strong><br>精準分析出 Flask 多執行緒搶佔 I2C 資源的問題，引導我們在馬達控制中加入 <code>threading.Lock()</code> 進行保護，成功穩定系統。</p>
+                    </div>
+                    <a href="請貼上你的Gemini分享連結1" target="_blank" style="display: block; text-align: center; background: #e8f0fe; color: #1a73e8; padding: 8px; border-radius: 8px; text-decoration: none; font-weight: bold; font-size: 0.9rem; margin-top: 10px;">💬 點此查看除錯對話紀錄</a>
                 </div>
                 
-                <div style="background: rgba(255,255,255,0.8); padding: 20px; border-radius: 15px; border-top: 5px solid #0F9D58; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
-                    <h3 style="margin-top:0; color:#0d652d; font-size: 1.1rem;">⚙️ 突破 YOLO 效能瓶頸</h3>
-                    <p style="font-size: 0.9rem; margin-bottom: 0;">
-                        <strong>提問情境：</strong><br>啟動 YOLOv8 後，Web 影像嚴重卡頓，導致循線反應不及 [cite: 78]。<br><br>
-                        <strong>Gemini 協助：</strong><br>建議採用「降解析度 (imgsz=160)」與「跳幀推論」策略，讓 RPi 5 能在維持自駕流暢度的同時，完成物件辨識。
-                    </p>
+                <div style="background: rgba(255,255,255,0.8); padding: 20px; border-radius: 15px; border-top: 5px solid #0F9D58; box-shadow: 0 4px 10px rgba(0,0,0,0.05); display: flex; flex-direction: column; justify-content: space-between;">
+                    <div>
+                        <h3 style="margin-top:0; color:#0d652d; font-size: 1.1rem;">⚙️ 突破 YOLO 效能瓶頸</h3>
+                        <p style="font-size: 0.9rem;"><strong>Gemini 協助：</strong><br>面對 Web 影像嚴重卡頓，建議採用「降解析度 (imgsz=160)」與「跳幀推論」策略，讓 RPi 5 能順暢完成自駕與物件辨識。</p>
+                    </div>
+                    <a href="請貼上你的Gemini分享連結2" target="_blank" style="display: block; text-align: center; background: #e6f4ea; color: #0d652d; padding: 8px; border-radius: 8px; text-decoration: none; font-weight: bold; font-size: 0.9rem; margin-top: 10px;">💬 點此查看優化對話紀錄</a>
                 </div>
                 
-                <div style="background: rgba(255,255,255,0.8); padding: 20px; border-radius: 15px; border-top: 5px solid #F4B400; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
-                    <h3 style="margin-top:0; color:#b08d00; font-size: 1.1rem;">🧠 PID 蛇行震盪調校</h3>
-                    <p style="font-size: 0.9rem; margin-bottom: 0;">
-                        <strong>提問情境：</strong><br>車輛在直線上不斷 S 型擺動，無法穩定貼合中線。<br><br>
-                        <strong>Gemini 協助：</strong><br>解析了 Kp 與 Kd 的物理意義，並建議我們在程式中加入 <code>Deadzone (死區)</code> 與 <code>Clamping (限幅)</code> 邏輯，大幅提升行駛平順度。
-                    </p>
+                <div style="background: rgba(255,255,255,0.8); padding: 20px; border-radius: 15px; border-top: 5px solid #F4B400; box-shadow: 0 4px 10px rgba(0,0,0,0.05); display: flex; flex-direction: column; justify-content: space-between;">
+                    <div>
+                        <h3 style="margin-top:0; color:#b08d00; font-size: 1.1rem;">🧠 PID 蛇行震盪調校</h3>
+                        <p style="font-size: 0.9rem;"><strong>Gemini 協助：</strong><br>針對直線上不斷 S 型擺動的問題，解析 Kp/Kd 物理意義，並協助加入 <code>Deadzone (死區)</code> 與 <code>Clamping (限幅)</code> 邏輯。</p>
+                    </div>
+                    <a href="請貼上你的Gemini分享連結3" target="_blank" style="display: block; text-align: center; background: #fef7e0; color: #b08d00; padding: 8px; border-radius: 8px; text-decoration: none; font-weight: bold; font-size: 0.9rem; margin-top: 10px;">💬 點此查看參數調校紀錄</a>
                 </div>
             </div>
         </div>
