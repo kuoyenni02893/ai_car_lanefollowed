@@ -18,7 +18,7 @@
 * `static/`: 存放前端 CSS 樣式與控制邏輯 (main.js)。
 
 ## 🔗 相關連結
-* **期末報告展示網頁 (GitHub Pages)**: [點此查看完整報告](https://github.com/kuoyenni02893/ai_car_lanefollowed)
+* **期末報告展示網頁 (GitHub Pages)**: [點此查看完整報告](https://kuoyenni02893.github.io/ai_car_lanefollowed/)
 * **實作錄影 (YouTube)**: [觀看示範影片](https://youtube.com/shorts/1jLA6BuiSa4?feature=share))
 
 ## 👥 開發團隊
