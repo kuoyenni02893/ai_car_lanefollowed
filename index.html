@@ -119,11 +119,12 @@
                     </ul>
                 </div>
                 <div style="flex: 1; min-width: 300px; text-align: center;">
-                    <img src="web.ui.png" alt="Flask 中控台畫面" style="width: 100%; border-radius: 15px; box-shadow: 0 8px 20px rgba(0,0,0,0.15); border: 1px solid #ddd;">
+                    <img src="web_ui.png" alt="Flask 中控台畫面" style="width: 100%; border-radius: 15px; box-shadow: 0 8px 20px rgba(0,0,0,0.15); border: 1px solid #ddd;">
                     <p style="font-size: 0.85rem; color: #666; margin-top: 10px;">▲ 整合影像辨識與 PID 參數調整的 Web UI 介面</p>
                 </div>
             </div>
         </div>
+
         <div class="box span-2" style="animation-delay: 1.3s;">
             <h2>🤖 AI 協作開發：與 Gemini 的 Troubleshooting</h2>
             <p>在開發過程中，面對硬體底層報錯與演算法瓶頸，我們積極運用 Gemini 作為強大的開發助教，解決了以下關鍵技術難題：</p>
@@ -134,7 +135,7 @@
                         <h3 style="margin-top:0; color:#1a73e8; font-size: 1.1rem;">🐞 解決 I2C 通訊當機</h3>
                         <p style="font-size: 0.9rem;"><strong>Gemini 協助：</strong><br>精準分析出 Flask 多執行緒搶佔 I2C 資源的問題，引導我們在馬達控制中加入 <code>threading.Lock()</code> 進行保護，成功穩定系統。</p>
                     </div>
-                    <a href="https://g.co/gemini/share/8b540508c64f" target="_blank" style="display: block; text-align: center; background: #e8f0fe; color: #1a73e8; padding: 8px; border-radius: 8px; text-decoration: none; font-weight: bold; font-size: 0.9rem; margin-top: 10px;">💬 點此查看除錯對話紀錄</a>
+                    <a href="https://drive.google.com/open?id=1rIHWN9JPbbBL0Q3K46ON-64mAXJnkrRH_VifM4QRyCg" target="_blank" style="display: block; text-align: center; background: #e8f0fe; color: #1a73e8; padding: 8px; border-radius: 8px; text-decoration: none; font-weight: bold; font-size: 0.9rem; margin-top: 10px;">📄 點此查看除錯文件紀錄</a>
                 </div>
                 
                 <div style="background: rgba(255,255,255,0.8); padding: 20px; border-radius: 15px; border-top: 5px solid #0F9D58; box-shadow: 0 4px 10px rgba(0,0,0,0.05); display: flex; flex-direction: column; justify-content: space-between;">
@@ -142,7 +143,7 @@
                         <h3 style="margin-top:0; color:#0d652d; font-size: 1.1rem;">⚙️ 突破 YOLO 效能瓶頸</h3>
                         <p style="font-size: 0.9rem;"><strong>Gemini 協助：</strong><br>面對 Web 影像嚴重卡頓，建議採用「降解析度 (imgsz=160)」與「跳幀推論」策略，讓 RPi 5 能順暢完成自駕與物件辨識。</p>
                     </div>
-                    <a href="https://g.co/gemini/share/36b0564784da" target="_blank" style="display: block; text-align: center; background: #e6f4ea; color: #0d652d; padding: 8px; border-radius: 8px; text-decoration: none; font-weight: bold; font-size: 0.9rem; margin-top: 10px;">💬 點此查看優化對話紀錄</a>
+                    <a href="https://drive.google.com/open?id=1BWczaJJDxR-z4lD2SNuYKKRYKHnHbdOJJs1jlj3Y7AM" target="_blank" style="display: block; text-align: center; background: #e6f4ea; color: #0d652d; padding: 8px; border-radius: 8px; text-decoration: none; font-weight: bold; font-size: 0.9rem; margin-top: 10px;">📄 點此查看優化文件紀錄</a>
                 </div>
                 
                 <div style="background: rgba(255,255,255,0.8); padding: 20px; border-radius: 15px; border-top: 5px solid #F4B400; box-shadow: 0 4px 10px rgba(0,0,0,0.05); display: flex; flex-direction: column; justify-content: space-between;">
@@ -150,7 +151,7 @@
                         <h3 style="margin-top:0; color:#b08d00; font-size: 1.1rem;">🧠 PID 蛇行震盪調校</h3>
                         <p style="font-size: 0.9rem;"><strong>Gemini 協助：</strong><br>針對直線上不斷 S 型擺動的問題，解析 Kp/Kd 物理意義，並協助加入 <code>Deadzone (死區)</code> 與 <code>Clamping (限幅)</code> 邏輯。</p>
                     </div>
-                    <a href="https://g.co/gemini/share/dac5851067e7" target="_blank" style="display: block; text-align: center; background: #fef7e0; color: #b08d00; padding: 8px; border-radius: 8px; text-decoration: none; font-weight: bold; font-size: 0.9rem; margin-top: 10px;">💬 點此查看參數調校紀錄</a>
+                    <a href="https://drive.google.com/open?id=1ohP1aDIY6UizLjMq9SNaitTzqVlg9j98Go45QQCUd_s" target="_blank" style="display: block; text-align: center; background: #fef7e0; color: #b08d00; padding: 8px; border-radius: 8px; text-decoration: none; font-weight: bold; font-size: 0.9rem; margin-top: 10px;">📄 點此查看調校文件紀錄</a>
                 </div>
             </div>
         </div>
